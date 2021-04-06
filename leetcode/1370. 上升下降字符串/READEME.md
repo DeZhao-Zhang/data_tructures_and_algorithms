@@ -27,6 +27,7 @@
 2. 如果这样放的话 如何判断循环结束呢？
 - 通过对比拼接字符的长度和原始字符的长度 来进行判断循环是否结束！
 ## 官方解答
+![image](https://user-images.githubusercontent.com/21255807/113679051-e8166a80-96f1-11eb-8424-625a7181fd7d.png)
 
 ### 代码
 ```buildoutcfg
