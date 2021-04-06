@@ -21,5 +21,31 @@
 3. 从右到左 分别弹出每个元素对应的字符 并将个数减一 如果个数为0 删除
 4. 当数组长度为0的时候 结束程序
 ### 具体实现
-
+#### 问题(参考了官方解答)
+1. 如果使用`ord()`函数来获取字符的大小 如何才能更好的进行排序呢？？
+- 我们知道字符的范围有限`a-z`,可以创建大小为26的桶 然后按字符大小与`a`的差值来进行放入
+2. 如果这样放的话 如何判断循环结束呢？
+- 通过对比拼接字符的长度和原始字符的长度 来进行判断循环是否结束！
 ## 官方解答
+
+### 代码
+```buildoutcfg
+class Solution:
+    def sortString(self, s: str) -> str:
+        num = [0] * 26
+        for ch in s:
+            num[ord(ch) - ord('a')] += 1
+        
+        ret = list()
+        while len(ret) < len(s):
+            for i in range(26):
+                if num[i]:
+                    ret.append(chr(i + ord('a')))
+                    num[i] -= 1
+            for i in range(25, -1, -1):
+                if num[i]:
+                    ret.append(chr(i + ord('a')))
+                    num[i] -= 1
+
+        return "".join(ret)
+```
