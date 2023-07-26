@@ -19,15 +19,23 @@ class Liked{
 
     constructor() {
         this.head = new Node(null);
-        this.cur = this.head;
     }
 
-    add(node){
-        if (this.head.value = null){
-            this.head = node;
+    add(value){
+        if (this.head.value == null){
+            this.head = new Node(value);
+            this.cur = this.head;
         } else {
-            this.cur.next = node;
-            this.cur = node;
+            this.cur.next = new Node(value);
+            this.cur = this.cur.next;
+        }
+    }
+
+    print(){
+        let start = this.head;
+        while (start != null){
+            console.log(start.value)
+            start = start.next
         }
     }
 
