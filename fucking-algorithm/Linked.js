@@ -32,11 +32,16 @@ class Liked{
     }
 
     print(){
+
+        let out = []
+
         let start = this.head;
         while (start != null){
-            console.log(start.value)
+            out.push(start.value)
             start = start.next
         }
+
+        console.log(`链表信息为: ${out.toString()}`)
     }
 
 }
